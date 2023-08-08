@@ -17,6 +17,12 @@ class Game {
   }
 
   registerEvents() {
+
+      window.addEventListener('keyup', (event) => {
+        event.key === this.currentSymbol.textContent ? this.success() : this.fail()
+      })
+    
+    
     /*
       TODO:
       Написать обработчик события, который откликается
