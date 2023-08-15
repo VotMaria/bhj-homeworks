@@ -1,10 +1,9 @@
 let windows = document.getElementById('subscribe-modal')
-windows.classList.add('modal_active')
 let windowsClose = document.querySelectorAll('.modal__close')
 
 
 window.onload = () => {
-  if(!document.cookie.includes('name=CookieClose')) {     
+  if(document.cookie.includes('name=CookieClose')) {     
     for (let element of windowsClose) {
       element.addEventListener('click', (e) => {
           element.closest('.modal').classList.remove('modal_active');
