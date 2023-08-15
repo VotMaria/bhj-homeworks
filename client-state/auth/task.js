@@ -1,6 +1,7 @@
 let signinForm = document.getElementById('signin__form')
 let welcome = document.getElementById('welcome')
 let userId = document.getElementById('user_id')
+let form = document.getElementById('signin')
 
 signinForm.addEventListener('submit', (e) => {
 
@@ -15,6 +16,7 @@ signinForm.addEventListener('submit', (e) => {
     localStorage.setItem('id', id);
                 
       if(id) {
+        form.classList.remove('signin_active');
         welcome.classList.add('welcome_active');
         welcome.textContent += id
       } else {
