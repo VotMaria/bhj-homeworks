@@ -3,8 +3,12 @@ windows.classList.add('modal_active')
 let windowsClose = document.querySelectorAll('.modal__close')
 
 window.onload = () => {
-  if(!'Cookie') {
-    element.closest('.modal').classList.remove('modal_active');
+  if(!document.cookie) {
+    for (let element of windowsClose) {
+      element.addEventListener('click', (e) => {
+          element.closest('.modal').classList.remove('modal_active');
+      })
+    }
   }
 }
 
@@ -14,15 +18,4 @@ for (let element of windowsClose) {
         document.cookie = 'Cookie=CookieClose';   
         e.preventDefault();  
       });
-    }
-
-  
-
-      
-    
-    
-
-    
-   
-
-   
+}   
